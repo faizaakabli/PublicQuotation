@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cotacar-48c0e": {
+      "hosting": {
+        "publicquotation": [
+          "publicquotation-c5105"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cotacar-48c0e"
+  }
+}
