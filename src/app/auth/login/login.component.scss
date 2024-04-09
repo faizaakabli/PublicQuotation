@@ -1,49 +1,54 @@
 .login-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
-    
-    .form-group {
-      margin-bottom: 20px;
-      
-      input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-      }
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
     }
-    
-    button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-      
+  }
+
+  .register-link {
+    text-align: center;
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+
       &:hover {
-        background-color: #0056b3;
-      }
-    }
-    
-    .register-link {
-      text-align: center;
-      
-      a {
-        color: #007bff;
-        text-decoration: none;
-        
-        &:hover {
-          text-decoration: underline;
-        }
+        text-decoration: underline;
       }
     }
   }
-  
+}
+
+@media screen and (max-width: 576px) {
+  .login-form {
+    padding: 10px;
+  }
+}

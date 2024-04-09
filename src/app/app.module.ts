@@ -17,6 +17,8 @@ import { Createquotation } from './create-quotation/create-quotation.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { FooterComponent } from '../app/footer/footer.component'
+import { HeaderComponent } from '../app/header/header.component'
 
 @NgModule({
     declarations: [
@@ -24,10 +26,12 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
         LoginComponent,
         RegisterComponent,
         Createquotation,
+        
     ],
 
   imports: [
     BrowserModule,
+    FooterComponent,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FirestoreModule,
     AppRoutingModule,
@@ -37,6 +41,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     FormsModule,
     HttpClientModule,
     AngularFirestoreModule,
+    HeaderComponent,
     provideFirebaseApp(() => initializeApp({"projectId":"cotacar-48c0e","appId":"1:984201144466:web:2083f8ade292ddd07b5e4b","databaseURL":"https://cotacar-48c0e-default-rtdb.firebaseio.com","storageBucket":"cotacar-48c0e.appspot.com","apiKey":"AIzaSyDdxaFugJsYXmQi_1rly_Eyg-vPec7ch2E","authDomain":"cotacar-48c0e.firebaseapp.com","messagingSenderId":"984201144466","measurementId":"G-R50Y3KE7QL"})),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { finalize } from 'rxjs/operators';
@@ -14,32 +13,18 @@ import { AuthentificationService } from '../services/Authentification.service';
 })
 export class Createquotation {
   message: string = '';
-  brand: string = '';
-  model: string = '';
   password: string = '';
   email: string = '';
-  year: number | null = null;
   selectedFile: File | null = null;
 
   constructor(
-    private afAuth: AngularFireAuth,
     private router: Router,
     private storage: AngularFireStorage,
     private firestore: AngularFirestore,
     private authService: AuthentificationService
   ) {}
 
-  logout() {
-    this.afAuth
-      .signOut()
-      .then(() => {
-        console.log('Déconnexion réussie !');
-        this.router.navigate(['/login']); // Redirection vers la page de connexion après la déconnexion
-      })
-      .catch((error) => {
-        console.log('Erreur lors de la déconnexion :', error);
-      });
-  }
+
 
   uploadPhoto(file: File) {
     const filePath = `vehicle_photos/${new Date().getTime()}_${file.name}`;
@@ -64,10 +49,6 @@ export class Createquotation {
       .collection('quotes')
       .add({
         message: message,
-        brand: this.brand,
-        model: this.model,
-        year: this.year,
-        timestamp: new Date(),
       })
       .then((docRef) => {
         console.log('Message enregistré avec succès. ID:', docRef.id);
